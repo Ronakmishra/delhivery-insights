@@ -98,7 +98,7 @@ The following filters are available to slice and dice the data:
 
 ## 📊 Dashboard Demo
 
-### Dashboard Walkthrough (GIF)
+### Dashboard
 
 ![Dashboard Walkthrough](gif.gif)
 
@@ -106,16 +106,12 @@ The following filters are available to slice and dice the data:
 
 - **Main Dashboard View**  
   ![Dashboard Screenshot 1](db1.png)
-- **Order & Revenue Analytics**  
-  ![Dashboard Screenshot 2](db2.png)
-- **Defect & Safety Metrics**  
-  ![Dashboard Screenshot 3](db3.png)
 
 ---
 
 ## 🗺️ Data Model
 
-![Data Model](datamodel.png)
+![Data Model](DataModel.png)
 
 ---
 
