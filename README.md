@@ -126,7 +126,7 @@ The client requested **no further use of CSV/Excel** and emphasized the need for
 ├── gif.gif                        # Dashboard walkthrough GIF
 ├── db1.png, db2.png, db3.png      # Dashboard screenshots
 ├── datamodel.png                  # Data model image
-├── info project.docx              # Project planning document and requirements
+
 ```
 
 ---
