@@ -52,3 +52,84 @@ The dataset is sourced from Delhivery’s operations and contains **18 columns**
 | Year of Transaction | Year in which the transaction occurred |
 
 **Note:** The data was provided in CSV format, consolidated and verified for quality before loading into Snowflake.
+
+## 🏗️ Architecture & Data Flow
+
+- **Data Source:** Original CSV files from client
+- **Warehouse:** All data loaded and managed in Snowflake (no more Excel/CSV dependence)
+- **BI Tool:** Tableau, connected directly to Snowflake for a live connection
+
+---
+
+## 🖥️ Dashboard Filters
+
+The following filters are available to slice and dice the data:
+
+- Location
+- Customer Gender
+- Roles
+- Carriers
+- Products
+- Product Type
+- Year of Transaction
+- Supplier
+- Mode
+
+---
+
+## 🚦 Data Modeling
+
+- All CSVs are consolidated in Snowflake as normalized tables.
+- Relationships modeled for accurate joins across entities (Product, Supplier, Carrier, etc.).
+- Star/Snowflake schema (as appropriate) for optimized querying.
+
+---
+
+## 🔗 How to Use
+
+1. **Connect Tableau to Snowflake:**  
+   Configure your Tableau instance to connect to the Snowflake warehouse containing the project data.
+2. **Explore the Dashboard:**  
+   Use filters to drill down into specific business dimensions.
+3. **Export Data:**  
+   Click the download button in the dashboard for a full data export in tabular format.
+
+---
+
+## 📊 Dashboard Demo
+
+### Dashboard Walkthrough (GIF)
+
+![Dashboard Walkthrough](gif.gif)
+
+### Dashboard Screenshots
+
+- **Main Dashboard View**  
+  ![Dashboard Screenshot 1](db1.png)
+- **Order & Revenue Analytics**  
+  ![Dashboard Screenshot 2](db2.png)
+- **Defect & Safety Metrics**  
+  ![Dashboard Screenshot 3](db3.png)
+
+---
+
+## 🗺️ Data Model
+
+![Data Model](datamodel.png)
+
+---
+
+## 📁 Repository Structure
+
+```text
+/
+├── Delhivery Datasets/
+├── Delhivery Dashboard.twbx
+├── README.md
+├── db1.png
+├── db2.png
+├── db3.png
+├── gif.gif
+├── datamodel.png
+├── info project.docx
+```
