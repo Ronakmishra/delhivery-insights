@@ -102,11 +102,6 @@ The following filters are available to slice and dice the data:
 
 ![Dashboard Walkthrough](gif.gif)
 
-### Dashboard Screenshots
-
-- **Main Dashboard View**  
-  ![Dashboard Screenshot 1](db1.png)
-
 ---
 
 ## 🗺️ Data Model
