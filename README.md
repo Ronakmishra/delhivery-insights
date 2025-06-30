@@ -112,7 +112,7 @@ The client requested **no further use of CSV/Excel** and emphasized the need for
 
 ## 🗺️ Data Model
 
-![Data Model](datamodel.png)
+![Data Model](DataModel.png)
 
 ---
 
