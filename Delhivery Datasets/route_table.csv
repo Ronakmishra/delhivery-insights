@@ -1,0 +1,4 @@
+﻿ROUTE,Route Name,Delivery Agents,Route Traffic,Route Profitability
+ROUTE A,A to D,Sahil,High,Good
+ROUTE B,B to D,Chaitanya,High,Good
+ROUTE C,C to D,Junaid,Average,Bad
