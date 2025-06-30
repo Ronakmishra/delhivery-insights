@@ -103,6 +103,8 @@ The client requested **no further use of CSV/Excel** and emphasized the need for
 - **Data Warehouse**: Snowflake
 - **Business Intelligence**: Tableau
 
+---
+
 ## 🧱 Data Modeling
 
 ---
