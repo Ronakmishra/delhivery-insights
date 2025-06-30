@@ -1,34 +1,37 @@
-# Delhivery Analytics Dashboard
+# 📦 Delhivery Analytics
 
-A modern, interactive analytics dashboard for Delhivery’s supply chain operations—built to mirror client website aesthetics and empower stakeholders with actionable data insights.
+An end-to-end analytics solution built as a **proof of concept (PoC)** for Delhivery—India’s leading logistics provider. This modern, interactive dashboard mimics the aesthetics of the [Delhivery website](https://www.delhivery.com/) and empowers stakeholders with real-time, actionable insights across operations, revenue, and product metrics.
 
-## 🚚 Project Overview
+---
 
-This project delivers a comprehensive **Supply Chain Analytics Dashboard** tailored for Delhivery, India’s leading logistics provider. The solution focuses on real-time order tracking, operational visibility, and multi-dimensional analytics—adhering strictly to the client’s brand and usability requirements.
+## 🧠 Project Context
 
-**Key Objectives:**
+Delhivery provided a supply chain dataset in CSV format and requested a robust, real-time analytics dashboard that:
 
-- Mirror the look and feel of the Delhivery website
-- Provide real-time tracking of orders, revenue, product availability, defects, leakages, breakage, and shipping costs
-- Enable deep-dive analytics by product, product type, carrier, location, and supplier
-- Allow full data export/download in tabular format
-- Deliver advanced filtering (“slice and dice”) and drilldown capabilities
+- Reflects the **look and feel of their official website**
+- Replaces manual Excel-based analysis with a live, cloud-based data warehouse (Snowflake)
+- Offers **deep-dive visual analytics**, granular filters, and **complete data exports** in a tabular format
 
-## 📊 Dashboard Features
+This project was executed as a PoC to showcase the power of modern BI tools and cloud data warehousing in solving real-world logistics problems.
 
-- **Order Tracking:** Monitor how many orders are dispatched from the warehouse.
-- **Revenue Analytics:** Real-time revenue reporting across products, locations, and time.
-- **Product Availability:** View current stock levels and availability percentages.
-- **Defect & Leakage Monitoring:** Track product defect rates, leakage, and breakage incidents.
-- **Shipping Cost Analysis:** Visualize shipping costs per order and unit.
-- **Safety Metrics:** Multi-level safety tracking (by product, product type, carrier, etc.)
-- **Unit Contribution:** Analyze sales contribution by individual units.
-- **Comprehensive Filters:** Dynamic filters for Location, Gender, Role, Carrier, Product, and more.
-- **Data Download:** One-click export of the complete dashboard dataset in a tabular format.
+---
+
+## 🎯 Project Objectives
+
+- Design a dashboard that visually mirrors the Delhivery website
+- Migrate all data from static CSV/Excel files to a Snowflake data warehouse
+- Enable **real-time data refresh** and eliminate spreadsheet dependency
+- Provide deep analytics across:
+  - Orders, revenue, stock levels, shipping cost, and defects
+  - Dimensions like product, carrier, supplier, route, customer gender, and more
+- Implement comprehensive filters to allow slicing/dicing by any metric
+- Add a one-click **data export** button for full tabular download
+
+---
 
 ## 🗃️ Dataset Description
 
-The dataset is sourced from Delhivery’s operations and contains **18 columns**:
+The dataset included **3 CSV files** with a combined schema of **18 columns**. After performing **data cleaning and validation in Excel**, the files were consolidated and loaded into Snowflake.
 
 | Column Name         | Description                            |
 | ------------------- | -------------------------------------- |
@@ -51,54 +54,57 @@ The dataset is sourced from Delhivery’s operations and contains **18 columns**
 | Shipping costs      | Cost incurred for shipping             |
 | Year of Transaction | Year in which the transaction occurred |
 
-**Note:** The data was provided in CSV format, consolidated and verified for quality before loading into Snowflake.
+---
 
-## 🏗️ Architecture & Data Flow
+## 🏗️ Architecture & Workflow
 
-- **Data Source:** Original CSV files from client
-- **Warehouse:** All data loaded and managed in Snowflake (no more Excel/CSV dependence)
-- **BI Tool:** Tableau, connected directly to Snowflake for a live connection
+```text
+CSV Files → Excel Cleaning → Snowflake Warehouse → Tableau Dashboard (Live Connection)
+```
 
 ---
 
-## 🖥️ Dashboard Filters
+### 🔄 Why Snowflake?
 
-The following filters are available to slice and dice the data:
+The client requested **no further use of CSV/Excel** and emphasized the need for a **cloud-based, scalable** data platform. Snowflake was chosen for its:
 
-- Location
-- Customer Gender
-- Roles
-- Carriers
-- Products
-- Product Type
-- Year of Transaction
-- Supplier
-- Mode
+- Seamless integration with Tableau
+- Ability to handle large datasets efficiently
+- Secure and centralized data management
 
 ---
 
-## 🚦 Data Modeling
+## 📊 Dashboard Features
 
-- All CSVs are consolidated in Snowflake as normalized tables.
-- Relationships modeled for accurate joins across entities (Product, Supplier, Carrier, etc.).
-- Star/Snowflake schema (as appropriate) for optimized querying.
+- **Order Tracking**: Real-time count of warehouse-dispatched orders
+- **Revenue Analytics**: Revenue trends across dimensions
+- **Product Availability**: Percent availability of stock
+- **Defect & Leakage Tracking**: Breakdown by product, location, and carrier
+- **Shipping Cost Analysis**: Costs visualized per order and unit
+- **Unit Contribution**: Impact of individual units on total sales
+- **Safety Metrics**: Monitored across product types and carriers
+- **Data Export**: One-click tabular download of the entire dataset
+- **Comprehensive Filters**: Multi-level slicing by:
+  - Location
+  - Gender
+  - Role
+  - Carrier
+  - Product
+  - Product Type
+  - Year of Transaction
+  - Supplier
+  - Mode
 
 ---
 
-## 🔗 How to Use
+## 🧱 Data Modeling
 
-1. **Connect Tableau to Snowflake:**  
-   Configure your Tableau instance to connect to the Snowflake warehouse containing the project data.
-2. **Explore the Dashboard:**  
-   Use filters to drill down into specific business dimensions.
-3. **Export Data:**  
-   Click the download button in the dashboard for a full data export in tabular format.
+- Modeled using a **star schema** with dimension and fact tables in Snowflake
+- Relationships optimized for dashboard performance and accurate joins
 
 ---
 
-## 📊 Dashboard Demo
-
-### Dashboard
+## 🖥️ Dashboard Preview
 
 ![Dashboard Walkthrough](gif.gif)
 
@@ -106,7 +112,7 @@ The following filters are available to slice and dice the data:
 
 ## 🗺️ Data Model
 
-![Data Model](DataModel.png)
+![Data Model](datamodel.png)
 
 ---
 
@@ -114,13 +120,21 @@ The following filters are available to slice and dice the data:
 
 ```text
 /
-├── Delhivery Datasets/
-├── Delhivery Dashboard.twbx
-├── README.md
-├── db1.png
-├── db2.png
-├── db3.png
-├── gif.gif
-├── datamodel.png
-├── info project.docx
+├── Delhivery Datasets/            # Contains original CSV datasets
+├── Delhivery Dashboard.twbx       # Tableau packaged workbook (linked to Snowflake)
+├── README.md                      # This documentation file
+├── gif.gif                        # Dashboard walkthrough GIF
+├── db1.png, db2.png, db3.png      # Dashboard screenshots
+├── datamodel.png                  # Data model image
+├── info project.docx              # Project planning document and requirements
 ```
+
+---
+
+## ✅ Outcome
+
+The project successfully met all client requirements, demonstrating:
+
+- End-to-end BI pipeline design
+- Live connection setup with Tableau and Snowflake
+- Functional UI replicating a real-world logistics company dashboard
