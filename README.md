@@ -97,7 +97,15 @@ The client requested **no further use of CSV/Excel** and emphasized the need for
 
 ---
 
+## ⚙️ Tech Stack
+
+- **Data Cleaning**: Microsoft Excel
+- **Data Warehouse**: Snowflake
+- **Business Intelligence**: Tableau
+
 ## 🧱 Data Modeling
+
+---
 
 - Modeled using a **star schema** with dimension and fact tables in Snowflake
 - Relationships optimized for dashboard performance and accurate joins
@@ -138,3 +146,9 @@ The project successfully met all client requirements, demonstrating:
 - End-to-end BI pipeline design
 - Live connection setup with Tableau and Snowflake
 - Functional UI replicating a real-world logistics company dashboard
+
+## 🚀 Future Improvements
+
+- Automate data loading to Snowflake using Airflow or DBT
+- Integrate real-time APIs instead of static CSVs
+- Add anomaly detection for defect rate spikes
